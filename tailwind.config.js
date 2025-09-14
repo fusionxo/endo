@@ -1,23 +1,50 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}'
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // Optional, supports dark mode toggling
   theme: {
     extend: {
       colors: {
-        'primary': '#f7ad32',         // Main accent orange/yellow
-        'primary-dark': '#a85611',    // Deep orange for hover
-        'bg-main': '#181818',         // Almost black background
-        'bg-card': '#232323',         // Card backgrounds (very dark gray)
-        'surface':  '#232323',        // Use throughout for panels/cards
-        'text-main': '#fff',
-        'text-secondary': '#fcfcfc',
-        'text-muted': '#B2B2B2',
+        'primary': {
+          500: '#FF6B35', // A vibrant orange for primary actions
+          600: '#ea580c',
+        },
+        'secondary': {
+          500: '#2E4057', // A deep blue for accents and backgrounds
+          900: '#1a202c', // Even darker blue for cards and surfaces
+        },
+        'accent': {
+          400: '#FFE66D', // A bright yellow for highlights
+        },
+        'background': '#111827', // A dark gray for the main background
+        'surface': '#1f2937', // A slightly lighter gray for cards and panels
+        'text-primary': '#F9FAFB', // Off-white for primary text
+        'text-secondary': '#D1D5DB', // A softer gray for secondary text
       },
+      fontFamily: {
+        'heading': ['Inter', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.6s ease-in-out',
+        'slide-up': 'slideUp 0.6s ease-out',
+        'bounce-slow': 'bounce 2s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(30px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        }
+      }
     },
   },
   plugins: [],
 }
+

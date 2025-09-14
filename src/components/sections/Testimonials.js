@@ -40,7 +40,7 @@ export default function Testimonials() {
   })
 
   return (
-    <section className="section-padding bg-gray-50" ref={ref}>
+    <section className="section-padding bg-surface" ref={ref}>
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -51,7 +51,7 @@ export default function Testimonials() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             What Our <span className="text-gradient">Members Say</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Real stories from real people who have transformed their lives at Endorphin
           </p>
         </motion.div>
@@ -63,7 +63,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-xl p-8 card-hover"
+              className="bg-secondary-900 rounded-2xl shadow-xl p-8 card-hover"
             >
               <div className="flex items-center mb-6">
                 <img
@@ -72,8 +72,8 @@ export default function Testimonials() {
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h3 className="font-semibold text-lg">{testimonial.name}</h3>
-                  <p className="text-gray-500 text-sm">{testimonial.location}</p>
+                  <h3 className="font-semibold text-lg text-text-primary">{testimonial.name}</h3>
+                  <p className="text-text-secondary text-sm">{testimonial.location}</p>
                   <p className="text-primary-500 text-sm font-medium">{testimonial.program}</p>
                 </div>
               </div>
@@ -84,11 +84,11 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <Quote className="w-8 h-8 text-gray-300 mb-4" />
+              <Quote className="w-8 h-8 text-gray-600 mb-4" />
               
-              <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
+              <p className="text-text-secondary mb-6 italic">"{testimonial.quote}"</p>
               
-              <div className="bg-primary-50 rounded-lg p-4">
+              <div className="bg-surface rounded-lg p-4">
                 <div className="text-primary-500 font-semibold text-center">
                   🎉 {testimonial.result}
                 </div>

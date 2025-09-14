@@ -5,53 +5,71 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background: #181818;
   }
+  
   body {
-    @apply bg-bg-main text-text-main;
-    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    @apply bg-background text-text-primary;
   }
 }
 
-/* Buttons and cards clearly visible */
 @layer components {
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-bg-main font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg hover:scale-105;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl;
   }
+  
   .btn-secondary {
-    @apply bg-bg-card hover:bg-primary text-primary font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg hover:scale-105 border-2 border-primary;
+    @apply bg-secondary-500 hover:bg-secondary-900 text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:scale-105;
   }
+  
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-bg-main font-semibold py-3 px-6 rounded-lg transition duration-300;
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white font-semibold py-3 px-6 rounded-lg transform transition-all duration-300 hover:scale-105;
   }
+  
   .section-padding {
-    @apply py-12 px-4 sm:px-6 lg:px-8;
+    @apply py-16 px-4 sm:px-6 lg:px-8;
   }
+  
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
-  .card-dark {
-    @apply bg-bg-card text-text-main rounded-lg shadow-lg;
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-secondary-500 via-secondary-900 to-background;
   }
+  
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary-500/10;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-primary-dark to-bg-main bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 to-accent-400 bg-clip-text text-transparent;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
 }
 
-/* Scrollbar remains orange, for branding! */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #181818; }
-::-webkit-scrollbar-thumb { background: #f7ad32; border-radius: 8px; }
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
 
-/* Flip effect, etc, unchanged */
-.flip-card { perspective: 1000px; }
-.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d;}
-.flip-card:hover .flip-card-inner { transform: rotateY(180deg);}
-.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden;}
-.flip-card-back { transform: rotateY(180deg);}
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}

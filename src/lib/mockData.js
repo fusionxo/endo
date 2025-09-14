@@ -3,7 +3,7 @@ export const gymData = {
   location: "Deoghar, Jharkhand",
   phone: "+91 98765 43210",
   email: "info@endorphingym.com",
-  address: "Near Baidyanath Temple, Deoghar, Jharkhand 814112",
+  address: "1st Floor, Shivoham Tower, More, Kunda, Deoghar, Jharkhand 814112",
   
   stats: {
     members: 500,

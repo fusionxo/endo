@@ -33,7 +33,7 @@ export default function About() {
   })
 
   return (
-    <section className="section-padding bg-gray-50" ref={ref}>
+    <section className="section-padding bg-surface" ref={ref}>
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -44,7 +44,7 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose <span className="text-gradient">Endorphin?</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             We're not just another gym. We're Deoghar's premier wellness destination, 
             where ancient yoga wisdom meets cutting-edge fitness science.
           </p>
@@ -62,8 +62,8 @@ export default function About() {
               <div className="bg-primary-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-text-primary">{feature.title}</h3>
+              <p className="text-text-secondary">{feature.description}</p>
             </motion.div>
           ))}
         </div>

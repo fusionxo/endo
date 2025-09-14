@@ -54,7 +54,7 @@ export default function Classes() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="section-padding gradient-bg text-white">
+      <section className="section-padding gradient-bg text-text-primary">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ export default function Classes() {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Our <span className="text-accent-400">Classes</span>
             </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
               Discover a wide range of fitness classes designed to challenge, inspire, and transform you.
             </p>
           </motion.div>
@@ -72,7 +72,7 @@ export default function Classes() {
       </section>
 
       {/* Class Types */}
-      <section className="section-padding">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             {classes.map((classItem, index) => (
@@ -81,15 +81,15 @@ export default function Classes() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-xl p-8 card-hover"
+                className="bg-surface rounded-2xl shadow-lg p-8 card-hover"
               >
                 <div className="flex items-center mb-6">
                   <div className="bg-primary-500 p-4 rounded-full mr-4">
                     <classItem.icon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">{classItem.name}</h3>
-                    <div className="flex items-center space-x-4 text-gray-500 mt-2">
+                    <h3 className="text-2xl font-bold text-text-primary">{classItem.name}</h3>
+                    <div className="flex items-center space-x-4 text-text-secondary mt-2">
                       <span className="flex items-center space-x-1">
                         <Clock className="w-4 h-4" />
                         <span>{classItem.duration}</span>
@@ -99,9 +99,9 @@ export default function Classes() {
                         <span>Max {classItem.maxParticipants}</span>
                       </span>
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        classItem.intensity === 'High' ? 'bg-red-100 text-red-800' :
-                        classItem.intensity === 'Medium-High' ? 'bg-orange-100 text-orange-800' :
-                        'bg-green-100 text-green-800'
+                        classItem.intensity === 'High' ? 'bg-red-900/50 text-red-300' :
+                        classItem.intensity === 'Medium-High' ? 'bg-orange-900/50 text-orange-300' :
+                        'bg-green-900/50 text-green-300'
                       }`}>
                         {classItem.intensity}
                       </span>
@@ -109,13 +109,13 @@ export default function Classes() {
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-6">{classItem.description}</p>
+                <p className="text-text-secondary mb-6">{classItem.description}</p>
                 
                 <div className="grid grid-cols-2 gap-2 mb-6">
                   {classItem.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                      <span className="text-sm text-gray-700">{benefit}</span>
+                      <span className="text-sm text-text-secondary">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -130,7 +130,7 @@ export default function Classes() {
       </section>
 
       {/* Schedule */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-surface">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -138,14 +138,14 @@ export default function Classes() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Weekly Schedule</h2>
-            <p className="text-xl text-gray-600">Plan your week with our comprehensive class timetable</p>
+            <h2 className="text-4xl font-bold mb-4 text-text-primary">Weekly Schedule</h2>
+            <p className="text-xl text-text-secondary">Plan your week with our comprehensive class timetable</p>
           </motion.div>
 
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-secondary-900 rounded-2xl shadow-lg overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-primary-500 text-white">
+              <table className="w-full text-text-secondary">
+                <thead className="bg-primary-500/10 text-text-primary">
                   <tr>
                     <th className="p-4 text-left">Time</th>
                     <th className="p-4 text-center">Monday</th>
@@ -159,8 +159,8 @@ export default function Classes() {
                 </thead>
                 <tbody>
                   {schedule.map((row, index) => (
-                    <tr key={row.time} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                      <td className="p-4 font-semibold">{row.time}</td>
+                    <tr key={row.time} className={index % 2 === 0 ? 'bg-surface/50' : 'bg-surface'}>
+                      <td className="p-4 font-semibold text-text-primary">{row.time}</td>
                       <td className="p-4 text-center">{row.monday}</td>
                       <td className="p-4 text-center">{row.tuesday}</td>
                       <td className="p-4 text-center">{row.wednesday}</td>

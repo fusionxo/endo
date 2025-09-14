@@ -14,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${inter.className} bg-background`}>
         <Header />
         <main className="min-h-screen">
           {children}
@@ -26,3 +26,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+

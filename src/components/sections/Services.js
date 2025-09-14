@@ -41,7 +41,7 @@ export default function Services() {
   })
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section className="section-padding bg-background" ref={ref}>
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,7 +52,7 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our <span className="text-gradient">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
             Comprehensive fitness solutions tailored to help you achieve your health and wellness goals
           </p>
         </motion.div>
@@ -64,27 +64,27 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden card-hover"
+              className="bg-surface rounded-2xl shadow-lg overflow-hidden card-hover"
             >
               <div 
                 className="h-48 bg-cover bg-center relative"
                 style={{ backgroundImage: `url(${service.image})` }}
               >
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute top-4 left-4 bg-primary-500 p-3 rounded-full">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
               
               <div className="p-8">
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-text-primary">{service.title}</h3>
+                <p className="text-text-secondary mb-6">{service.description}</p>
                 
                 <div className="grid grid-cols-2 gap-2 mb-6">
                   {service.features.map((feature, i) => (
                     <div key={i} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-sm text-text-secondary">{feature}</span>
                     </div>
                   ))}
                 </div>
