@@ -15,7 +15,8 @@
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-intersection-observer": "^9.16.0"
+    "react-intersection-observer": "^9.16.0",
+    "react-parallax-tilt": "^1.7.308"
   },
   "devDependencies": {
     "autoprefixer": "^10",
